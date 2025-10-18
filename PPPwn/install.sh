@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# 创建目标目录（如果不存在）
+sudo mkdir -p /boot/firmware/PPPwn
+
+# 拷贝当前脚本所在目录下的所有文件到目标目录
+# 获取当前脚本所在目录的绝对路径
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+sudo cp -r "$SCRIPT_DIR"/* /boot/firmware/PPPwn/
+
 while true; do
 read -p "$(printf '\r\n\r\n\033[36mDo you want the Wanyun device to connect to the internet after PPPwn? (Y|N):\033[0m ')" pppq
 case $pppq in
@@ -108,6 +117,7 @@ break;;
 * ) echo -e '\033[31mPlease enter Y or N\033[0m';;
 esac
 done
+
 
 while true; do
 read -p "$(printf '\r\n\r\n\033[36mWould you like to use the older Python version of PPPwn? It runs significantly slower.\r\n\r\n\033[36m(Y|N)?: \033[0m')" cppp

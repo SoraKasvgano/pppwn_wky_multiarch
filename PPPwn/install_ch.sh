@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# 创建目标目录（如果不存在）
+sudo mkdir -p /boot/firmware/PPPwn
+
+# 拷贝当前脚本所在目录下的所有文件到目标目录
+# 获取当前脚本所在目录的绝对路径
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+sudo cp -r "$SCRIPT_DIR"/* /boot/firmware/PPPwn/
+
 while true; do
 read -p "$(printf '\r\n\r\n\033[36m是否希望玩客云设备在 PPPwn 后连接到互联网? (Y|N):\033[0m ')" pppq
 case $pppq in
