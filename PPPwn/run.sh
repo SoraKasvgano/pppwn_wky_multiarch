@@ -190,7 +190,7 @@ esac
             echo -e "$stdo" | sudo tee /dev/tty1 /dev/pts/* 2>/dev/null | sudo tee -a "/boot/firmware/PPPwn/pwn.log" >/dev/null
         fi
         # 处理成功状态
-        if [[ "$stdo" == "[+] Done.!" ]]; then
+        if [[ "$stdo" == "[+] Done!" ]]; then
             echo -e "\033[32m\nConsole PPPwned! \033[0m\n" | sudo tee /dev/tty1
             if [ "$PPPOECONN" = true ]; then
                 sudo systemctl start pppoe >/dev/null 2>&1 &
