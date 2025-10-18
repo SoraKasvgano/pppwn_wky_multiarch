@@ -208,7 +208,7 @@ SHUTDOWN='$SHTDN'
 USECPP='$UCPP'
 PPPOECONN='$INET'
 DTLINK='$DTLINK'
-PPDBG=false
+PPDBG=true
 TIMEOUT="1m"
 VMUSB=false'  | sudo tee /boot/firmware/PPPwn/config.sh >/dev/null 2>&1 &
 
