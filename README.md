@@ -2,12 +2,13 @@
 
 onekey pppwn multiarch based on https://github.com/Mintneko/WKY-Pwn
 
-
+For Chinese
 `chmod -R 777 /pppwn/PPPwn/install_ch.sh`
 `./pppwn/PPPwn/install_ch.sh`
 
+
 For English
-`chmod -R 777 /pppwn/PPPwn/install_ch.sh`
+`chmod -R 777 /pppwn/PPPwn/install.sh`
 `./pppwn/PPPwn/install.sh`
 
 这个脚本是来自于 <a href=https://github.com/TheOfficialFloW/PPPwn>PPPwn</a> and <a href=https://github.com/xfangfang/PPPwn_cpp>PPPwn_cpp</a> 关于针对 Amlogic S805来运行 <a href=https://github.com/GoldHEN/GoldHEN>GoldHen</a> 在PS4 的 11.0, 10.01, 10.00, 9.00版本进行自动化运行<br>
