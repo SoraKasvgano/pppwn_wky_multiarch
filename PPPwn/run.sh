@@ -188,15 +188,15 @@ esac
         if [ "$PPDBG" = true ]; then
             echo -e "$stdo" | sudo tee /dev/tty1 /dev/pts/* 2>/dev/null | sudo tee -a "/boot/firmware/PPPwn/pwn.log" >/dev/null
         fi
-        # 处理成功状态（匹配"[+] Done!"或"[+] Done.!"）
-        if [[ "$stdo" == "[+] Done"[!. ]"!" ]]; then
+        # 处理成功状态（分别匹配"[+] Done!"和"[+] Done.!"）
+        if [[ "$stdo" == "[+] Done!" || "$stdo" == "[+] Done.!" ]]; then
             echo -e "\033[32m\nConsole PPPwned! \033[0m\n" | sudo tee /dev/tty1
             if [ "$PPPOECONN" = true ]; then
                 sudo systemctl start pppoe >/dev/null 2>&1 &
             else
                 if [ "$SHUTDOWN" = true ]; then
                     read -t 5 || true
-                    sudo poweroff  # 满足条件时执行关机
+                    sudo poweroff  # 满足任一条件且SHUTDOWN为true时关机
                 else
                     if [ "$VMUSB" = true ]; then
                         sudo systemctl start pppoe >/dev/null 2>&1 &
